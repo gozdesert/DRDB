@@ -1,18 +1,11 @@
-JASA Reproducibility Materials Template
+Bayesian semiparametric causal inference: Targeted doubly robust estimation of treatment effects
 ================
 
-This GitHub repository contains a suggested template structure for authors who
-submit to JASA (either Applications and Case Studies or Theory and
-Methods) to include materials to reproduce analyses, visualizations, and
-tables.
+This repository contains the code for replication of the results in the paper "Bayesian semiparametric causal inference: Targeted doubly robust estimation of treatment effects" by G. Sert, A. Chakrabortty and A. Bhattacharya. It contains materials to reproduce analyses, visualizations, and tables obtained based on our proposed method Doubly Robust Debiased Bayesian procedure.
 
-We provide this template as a default structure that we (the JASA Associate Editors of Reproducibility) think could be
-useful for many projects, either as is or with modifications by authors.
-However, the template is intended to be helpful and is by no means
-required of authors. Authors should consult [our reproducibility
-guide](https://jasa-acs.github.io/repro-guide) for details on what is
-required of reproducibility materials submitted with JASA revisions (not
-required upon initial submission).
+The sub-folder `Simulation_Studies` is the main folder which includes the code to produce the simulation results provided in the paper. 
+
+The `Real_Data_Analysis` sub-folder includes the data from the National Health and Nutrition Examination Survey Epidemiologic Follow-up Study (NHEFS) which is used in the paper to evaluate the performance of the DRDB procedure and the corresponding code to conduct and reproduce the result presented in the paper.
 
 ## Why is a template repository useful?
 
