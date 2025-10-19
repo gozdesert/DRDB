@@ -1,5 +1,5 @@
-Please replace the contents of this file with relevant instructions for your repository or remove this file entirely.
+This directory contains the source code files that implement the DRDB method, along with various utility and auxiliary functions required to reproduce the simulation results from the paper
 
-This directory would generally contain source code files that contain the core code to implement the method and various utility/auxiliary functions.
+The script `simfun_mu.R` contains the main functions to set up and run the different simulation scenarios discussed in the paper.
 
-Scripts/code files that execute the overall workflow to carry out an analysis and generate results for the manuscript might be placed in the main directory.
+The script `simfun_psamples.R` is used to generate posterior samples for the Average Treatment Effect (ATE) based on the DRDB procedure.
