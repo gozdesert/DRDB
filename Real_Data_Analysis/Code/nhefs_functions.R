@@ -1,12 +1,7 @@
 
-# remove(list = ls())
-# # Load required libraries
+# Load required libraries
 library(dplyr)
-# # Load the dataset
-# nhefs <- read.csv("posterior_for_mu/Real_Data/NHEFS/nhefs.csv")
-# # Basic data exploration
-# str(nhefs)
-# summary(nhefs)
+
 # Function to properly identify and convert factor variables
 prepare_nhefs_data <- function(data) {
   
@@ -168,40 +163,3 @@ quick_positivity_check <- function(data, treatment_var = "qsmk") {
   
   return(issues)
 }
-
-
-# # Apply proper factor conversion first
-# nhefs_clean <- prepare_nhefs_data(nhefs)
-# # Check the structure
-# str(nhefs_clean[c("sex", "race", "education", "asthma", "exercise")])
-# #colnames of cleaned data
-# colnames(nhefs_clean)
-# 
-# 
-# # Create different analysis datasets
-# # 1. Minimal set
-# minimal_cov = c("sex", "age", "exercise", "education", "smokeintensity", "smokeyrs", "wt71")
-# # Create model matrices for minimal dataset
-# minimal_data <- create_model_matrices(nhefs_clean, minimal_cov)
-# head(minimal_data$X_no_int)
-# colSums(is.na(cbind(minimal_data$X_no_int, minimal_data$Y, minimal_data$Y)))
-# 
-# 
-# 
-# # 2. Extended set
-# extended_data <- create_analysis_data(
-#   nhefs,
-#   c("sex", "age", "race", "education", "income", "marital",
-#     "smokeintensity", "smokeyrs", "wt71", "ht", "sbp", "dbp",
-#     "asthma", "bronch", "hf", "hbp", "diabetes",
-#     "alcoholpy", "alcoholfreq", "exercise", "active")
-# )
-# 
-# head(extended_data)
-# colSums(is.na(extended_data))
-# nrow(extended_data)
-# ncol(extended_data)
-# # Create model matrices for extended dataset
-# model_data <- create_model_matrices(extended_data)
-# 
-
