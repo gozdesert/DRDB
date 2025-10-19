@@ -18,7 +18,7 @@ source("posterior_for_mu/Real_Data/post_summary_realdata_func.R")
 
 # Load the dataset
 nhefs <- read.csv("posterior_for_mu/Real_Data/NHEFS/nhefs.csv")
-#ind_miss=which(is.na(nhefs$wt82_71)|(nhefs$alcoholpy==2)) #added this line to remove missing rows
+
 # Apply proper factor conversion first
 nhefs_clean <- prepare_nhefs_data(nhefs)
 # Check the structure
@@ -26,20 +26,12 @@ str(nhefs_clean[c("sex", "race", "education", "asthma", "exercise")])
 
 # Create different analysis datasets
 # Y = wt82 ; trt = qsmk
-cov_set = c("sex", "race", "age", "education", "smokeintensity", "smokeyrs", "exercise", "active", "wt71", 
-            "sbp")
-  
-# c("sex", "race", "age", "education","smokeintensity", "smokeyrs", 
-#             "exercise", "active", "wt71", "asthma", "cholesterol",
-#             "dbp","ht","price71_82","sbp","tax71_82", "allergies")
-  
-#c("sex", "race", "age", "education","smokeintensity","smokeyrs", "exercise", "active", "wt71")
+cov_set = c("sex", "race", "age", "education", "smokeintensity", "smokeyrs", "exercise", "active", "wt71", "sbp")
 
 # Check if this set of covariates satisfies positivity condition 
 issues <- quick_positivity_check(nhefs_clean[c(cov_set, "qsmk")])
 
 # Create model matrices for given set of covariates
-#create_model_matrices <- function(data, covariate_set, treatment_var, outcome_var)
 gen_data <- create_model_matrices(data = nhefs_clean, covariate_set = cov_set, 
                                   treatment_var = "qsmk", outcome_var = "wt82_71")
 X = gen_data$X_no_int
